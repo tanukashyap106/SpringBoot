@@ -49,9 +49,20 @@ public ProductDTO getProductById(Long id) {
     public ProductDTO updateProduct(Long id,ProductDTO productDTO) {
         Product product = productRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Product not found!"));
+         Category category=categoryRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Category not found!"));
+         product.setName(productDTO.getName());
+         product.setDescription(productDTO.getDescription());
+         product.setPrice(productDTO.getPrice());
+         product.setCategory(category);
+         productRepository.save(product);
+         return ProductMapper.toProductDTO(product);
 
     }
-
+public  String deleteProduct(Long id) {
+    productRepository.deleteById(id);
+    return "Product " +id+ " has been deleted!";
+}
 
 
 
