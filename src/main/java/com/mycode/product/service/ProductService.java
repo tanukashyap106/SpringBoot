@@ -3,6 +3,7 @@ package com.mycode.product.service;
 import com.mycode.product.dto.ProductDTO;
 import com.mycode.product.entity.Category;
 import com.mycode.product.entity.Product;
+import com.mycode.product.exception.CategoryAlreadyExistsException;
 import com.mycode.product.mapper.ProductMapper;
 import com.mycode.product.repository.CategoryRepository;
 import com.mycode.product.repository.ProductRepository;
@@ -24,7 +25,7 @@ public ProductDTO createProduct(ProductDTO productDTO) {
      * name,description,price,categoryId
      */
     Category category= categoryRepository.findById(productDTO.getCategoryId())
-            .orElseThrow(()-> new RuntimeException("Category not found!"));
+            .orElseThrow(()-> new CategoryAlreadyExistsException("Category id: " + productDTO.getCategoryId()+ " not found"));
 
     //DTO---entity
    Product product= ProductMapper.toProductEntity(productDTO,category);
