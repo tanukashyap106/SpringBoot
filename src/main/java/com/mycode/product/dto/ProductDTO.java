@@ -1,10 +1,14 @@
 package com.mycode.product.dto;
 
 import com.mycode.product.mapper.CategoryMapper;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+@Schema(
+        name="Product",
+        description = "It holds product information"
+)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
