@@ -1,4 +1,4 @@
-package com.mycode.product.security;
+/*package com.mycode.product.security;
 
 import com.mycode.product.entity.User;
 import org.jspecify.annotations.Nullable;
@@ -16,7 +16,7 @@ public class UserPrincipal implements UserDetails {
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_SELLER"));
+        return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
     }
 
     @Override
@@ -29,3 +29,4 @@ public class UserPrincipal implements UserDetails {
         return user.getUsername();
     }
 }
+*/

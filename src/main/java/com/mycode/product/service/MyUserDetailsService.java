@@ -1,4 +1,4 @@
-package com.mycode.product.service;
+/*package com.mycode.product.service;
 
 import com.mycode.product.entity.User;
 import com.mycode.product.repository.UserRepository;
@@ -29,4 +29,4 @@ public class MyUserDetailsService implements UserDetailsService {
         if(user.isEmpty()) throw new UsernameNotFoundException("Username not found");
         return new UserPrincipal(user.get());
     }
-}
+}*/

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -31,7 +32,7 @@ public class CategoryService {
     }
     //get all categories
     public List<CategoryDTO> getAllCategories(){
-      return categoryRepository.findAll().stream().map(CategoryMapper::toCategoryDTO).toList();
+      return categoryRepository.findAll().stream().map(CategoryMapper::toCategoryDTO).collect(Collectors.toList());
 
     }
     //get category by id

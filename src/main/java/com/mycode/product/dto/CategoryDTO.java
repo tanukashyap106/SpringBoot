@@ -1,6 +1,5 @@
 package com.mycode.product.dto;
 import java.util.List;
-import com.mycode.product.entity.Product;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 

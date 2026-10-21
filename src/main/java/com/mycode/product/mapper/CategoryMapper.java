@@ -3,6 +3,8 @@ package com.mycode.product.mapper;
 import com.mycode.product.dto.CategoryDTO;
 import com.mycode.product.entity.Category;
 
+import java.util.stream.Collectors;
+
 
 public class CategoryMapper {
     public static CategoryDTO toCategoryDTO(Category category) {
@@ -13,7 +15,7 @@ public class CategoryMapper {
         categoryDTO.setId(category.getId());
         categoryDTO.setName(category.getName());
         categoryDTO.setProducts(category.getProducts().stream()
-                .map(ProductMapper::toProductDTO).toList());
+                .map(ProductMapper::toProductDTO).collect(Collectors.toList()));
         return categoryDTO;
 
     }

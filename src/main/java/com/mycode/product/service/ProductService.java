@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -37,7 +38,7 @@ public ProductDTO createProduct(ProductDTO productDTO) {
 
 //get all products
 public List<ProductDTO> getAllProducts() {
-    return productRepository.findAll().stream().map(ProductMapper::toProductDTO).toList();
+    return productRepository.findAll().stream().map(ProductMapper::toProductDTO).collect(Collectors.toList());
 }
 
 //get product by id
